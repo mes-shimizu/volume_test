@@ -37,12 +37,13 @@
 		function playAudioLoop() {
 			//ループさせる
 			var loopPlay = function(){
-			music.play();
-			music.currentTime = 0;
-			setTimeout(loopPlay, 5000/* 5秒 */);
+				music.play();
+				music.currentTime = 0;
+				setTimeout(loopPlay, 5000/* 5秒 */);
 			};
 			loopPlay();
 		}
+	}
 </script>
 </head>
 <body>
