@@ -31,6 +31,18 @@
 			}
 		});
 	}
+
+	const music = new Audio('pya3_trimmer.mp3');
+	soundcheck.addEventListener('click', function(){
+		function playAudioLoop() {
+			//ループさせる
+			var loopPlay = function(){
+			music.play();
+			music.currentTime = 0;
+			setTimeout(loopPlay, 1000/* 1秒 */);
+			};
+			loopPlay();
+		}
 </script>
 </head>
 <body>
