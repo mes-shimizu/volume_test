@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex"><!--インデックス拒否-->
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--スマホ時のみviewportでレスポンシブ設定 = タブレット表示対策-->
+<script type="text/javascript">
+	if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+			document.write('<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">');
+	}
+</script>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>車輌番号入力</title>
+<link href="img/common/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!--favicon-->
+<link href="web_font_notosans/font.css" rel="stylesheet" type="text/css" /><!--font-japanese-->
+<link href="web_font_Roboto-Condensed/font.css" rel="stylesheet" type="text/css" /><!--font-english-->
+<link href="css/common/common.css" rel="stylesheet" type="text/css" /><!--共通CSS-->
+<link href="css/header_input.css" rel="stylesheet" type="text/css" /><!--header_input-->
+<link href="css/index.css" rel="stylesheet" type="text/css" /><!--ページ毎のCSS-->
+<script>
+	// スマートフォンのみで動作するように条件を追加、だがタブレットでも出てしまうケースあり
+	if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+		window.addEventListener("orientationchange", function() {
+		if (window.orientation === 90 || window.orientation === -90) {
+			alert("【注】このアプリケーションはタブレットで見る場合は縦/横どちら向きでも大丈夫ですが、スマートフォンで見る場合は必ず「縦向き」にしてください");
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	
+	<header class="header_input">
+		<div class="header_wrap">
+			<h1 class="eng bold blue">
+				<img class="logo_title" src="img/common/illust_track_title.svg" alt="トラックアイコン">
+				TRUCKER VIEW
+				<span class="jap normal black small">VERSION-1.0.0</span>
+				<span class="jap normal black small">RELEASE-2024.04.01</span>
+			</h1>
+			<div class="port_name eng bold bg_blue white">Shimizu Container Terminal</div>
+			<div class="btn_close white bold bg_blue white t_center">閉じる</div>
+			<div class="company_logo no_repeat"></div>
+		</div><!--header_wrap-->
+	</header><!--header_input-->
+	
+	
+	<section class="view_area">
+		<h2 class="terminal_name t_center bold">清水港コンテナターミナル</h2>
+		<div class="apri_name eng bold blue">
+			<img class="logo_title" src="img/common/illust_track_title.svg" alt="トラックアイコン">
+			TRUCKER VIEW
+		</div>
+		<form>
+			<label>ヘッドID</label><input type="text" placeholder="ヘッドIDを入力">
+			<button class="submit">検索</button>
+		</form>
+		<div class="soundcheck no_repeat t_center">
+			音量確認ボタン
+		</div>
+		<div class="image">
+			<img src="img/port/img_shimizu.png" alt="清水港イメージ">
+		</div>
+	</section><!--view_area-->
+
+	
+<script src="js/html5shiv.js"></script>
+<script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+</body>
+</html>
