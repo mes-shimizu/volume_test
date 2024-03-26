@@ -22,9 +22,16 @@
 		// 	setTimeout(loopPlay, 5000/* 5秒 */);
 		// };
 		// loopPlay();
-		music.loop(3) = true;
+		let playCount = 0;
+		music.addEventListener('ended', function() {
+			playCount++;
+			if (playCount < 3) {
+				music.currentTime = 0;
+				music.play();
+			}
+		});
 		music.play();
-	};
+	}
 </script>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
