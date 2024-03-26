@@ -33,17 +33,15 @@
 	}
 
 	const music = new Audio('pya3_trimmer.mp3');
-	play.addEventListener('click', function(){
-		function playAudioLoop() {
-			//ループさせる
-			var loopPlay = function(){
-				music.play();
-				music.currentTime = 0;
-				setTimeout(loopPlay, 5000/* 5秒 */);
-			};
-			loopPlay();
+	function playAudioLoop() {
+		//ループさせる
+		var loopPlay = function(){
+			music.play();
+			music.currentTime = 0;
+			setTimeout(loopPlay, 5000/* 5秒 */);
 		};
-	});
+		loopPlay();
+	};
 </script>
 </head>
 <body>
@@ -73,11 +71,9 @@
 			<label>ヘッドID</label><input type="text" placeholder="ヘッドIDを入力">
 			<button class="submit">検索</button>
 		</form>
-<!-- 		<div class="soundcheck no_repeat t_center"> -->
-		<button class="soundcheck no_repeat t_center">
+		<div class="soundcheck no_repeat t_center" onclick="playAudioLoop" >
 			音量確認ボタン
-		</button>
-<!-- 		</div> -->
+		</div>
 		<div class="image">
 			<img src="img/port/img_shimizu.png" alt="清水港イメージ">
 		</div>
