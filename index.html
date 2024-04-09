@@ -14,14 +14,15 @@
 	}
 
 	const audio = new Audio('pya3_trimmer.mp3');
-	function playAudio(count) {
-	  audio.currentTime = 0; 
+	function playAudio(duration) {
+	  audio.currentTime = 0;
 	  audio.play();
-	  audio.onended = () => {
-	    if (count > 1) {
-	      playAudio(count - 1);
+	  setTimeout(() => {
+	    audio.pause();
+	    if (duration > 0) {
+	      playAudio(duration - audio.duration);
 	    }
-	  };
+	  }, audio.duration * 1000);
 	}
 </script>
 <meta name="keywords" content="" />
@@ -71,7 +72,7 @@
 			<label>ヘッドID</label><input type="text" placeholder="ヘッドIDを入力">
 			<button class="submit">検索</button>
 		</form>
-		<div class="soundcheck no_repeat t_center" onclick="playAudio(5)" >
+		<div class="soundcheck no_repeat t_center" onclick="playAudio(10)" >
 			音量確認ボタン
 		</div>
 		<div class="image">
