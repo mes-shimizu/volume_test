@@ -13,33 +13,15 @@
 			document.write('<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">');
 	}
 
-	const music = new Audio('pya3_trimmer.mp3');
-	// function playAudioLoop() {
-	// 	//ループさせる
-	// 	// var loopPlay = function(){
-	// 	// 	music.play();
-	// 	// 	music.currentTime = 0;
-	// 	// 	setTimeout(loopPlay, 5000/* 5秒 */);
-	// 	// };
-	// 	// loopPlay();
-	// 	let playCount = 0;
-	// 	music.addEventListener('ended', function() {
-	// 		playCount++;
-	// 		if (playCount < 3) {
-	// 			music.currentTime = 0;
-	// 			music.play();
-	// 		}
-	// 	});
-	// 	music.play();
-	// }
-
-	function playAudioForDuration() {
-	  music.play();
-	
-	  setTimeout(() => {
-	    music.pause();
-	    music.currentTime = 0;
-	  }, 10000);
+	const audio = new Audio('pya3_trimmer.mp3');
+	function playAudio(count) {
+	  audio.currentTime = 0; 
+	  audio.play();
+	  audio.onended = () => {
+	    if (count > 1) {
+	      playAudio(count - 1);
+	    }
+	  };
 	}
 </script>
 <meta name="keywords" content="" />
@@ -89,7 +71,7 @@
 			<label>ヘッドID</label><input type="text" placeholder="ヘッドIDを入力">
 			<button class="submit">検索</button>
 		</form>
-		<div class="soundcheck no_repeat t_center" onclick="playAudioForDuration()" >
+		<div class="soundcheck no_repeat t_center" onclick="playAudio(5)" >
 			音量確認ボタン
 		</div>
 		<div class="image">
